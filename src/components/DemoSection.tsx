@@ -306,11 +306,11 @@ export default function DemoSection() {
           {/* Canvas */}
           <div
             ref={containerRef}
-            className="relative rounded-2xl overflow-hidden border border-border bg-[#080808] cursor-none touch-none"
+            className="relative rounded-2xl overflow-hidden border border-border bg-[#080808] cursor-none"
           >
             <canvas
               ref={canvasRef}
-              className="w-full"
+              className="w-full touch-none"
             />
             
             {/* Status badge */}

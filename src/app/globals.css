@@ -21,10 +21,8 @@
 }
 
 html {
+  /* smooth scrolling only for anchor-link navigation, not wheel */
   scroll-behavior: smooth;
-  overflow-x: hidden;
-  /* Safe area insets for notched devices */
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 body {
@@ -34,11 +32,16 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Prevent text size inflation on mobile */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  /* Prevent pull-to-refresh on mobile during animations */
-  overscroll-behavior-y: none;
+}
+
+/* Scroll-locked state — toggled via JS class instead of inline styles */
+body.scroll-locked {
+  overflow: hidden;
+  position: fixed;
+  inset: 0;
+  width: 100%;
 }
 
 /* Disable custom cursor on touch devices */

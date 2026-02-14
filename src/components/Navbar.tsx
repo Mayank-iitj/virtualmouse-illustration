@@ -28,11 +28,19 @@ export default function Navbar() {
   // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileOpen) {
-      document.body.style.overflow = 'hidden';
+      const scrollY = window.scrollY;
+      document.body.dataset.scrollY = String(scrollY);
+      document.body.classList.add('scroll-locked');
     } else {
-      document.body.style.overflow = '';
+      const scrollY = Number(document.body.dataset.scrollY || 0);
+      document.body.classList.remove('scroll-locked');
+      window.scrollTo(0, scrollY);
     }
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      const scrollY = Number(document.body.dataset.scrollY || 0);
+      document.body.classList.remove('scroll-locked');
+      window.scrollTo(0, scrollY);
+    };
   }, [mobileOpen]);
 
   return (

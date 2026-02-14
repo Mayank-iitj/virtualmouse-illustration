@@ -104,11 +104,19 @@ export default function WelcomeAnimation() {
   // Lock body scroll during animation
   useEffect(() => {
     if (show) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
+      document.body.classList.add('scroll-locked');
     }
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.classList.remove('scroll-locked');
+    };
+  }, [show]);
+
+  // When animation completes, unlock scroll and reset to top
+  useEffect(() => {
+    if (!show) {
+      document.body.classList.remove('scroll-locked');
+      window.scrollTo(0, 0);
+    }
   }, [show]);
 
   return (

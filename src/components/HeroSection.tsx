@@ -7,9 +7,9 @@ import StarBorder from './StarBorder';
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-[100dvh] flex items-center justify-center">
       {/* Light Pillar Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <LightPillar
           topColor="#6366f1"
           bottomColor="#22d3ee"
@@ -27,10 +27,10 @@ export default function HeroSection() {
       </div>
 
       {/* Grid overlay */}
-      <div className="absolute inset-0 grid-pattern opacity-40 z-1" />
+      <div className="absolute inset-0 grid-pattern opacity-40 z-1 pointer-events-none" />
 
       {/* Radial gradient overlay for readability */}
-      <div className="absolute inset-0 bg-linear-to-b from-background/30 via-transparent to-background z-2" />
+      <div className="absolute inset-0 bg-linear-to-b from-background/30 via-transparent to-background z-2 pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-20 sm:pt-0">

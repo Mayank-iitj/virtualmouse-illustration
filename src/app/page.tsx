@@ -36,38 +36,62 @@ export default function Home() {
       <ScrollProgress />
       <Navbar />
 
-      <main className="relative">
+      <main className="relative" role="main">
         <LightPillarHero />
 
-        <div className="section-divider" />
+        <div className="section-divider" aria-hidden="true" />
         <WhySection />
 
-        <div className="section-divider" />
+        <div className="section-divider" aria-hidden="true" />
         <HowItWorksSection />
 
-        <div className="section-divider" />
+        <div className="section-divider" aria-hidden="true" />
         <DeepDiveSection />
 
-        <div className="section-divider" />
+        <div className="section-divider" aria-hidden="true" />
         <DemoSection />
 
-        <div className="section-divider" />
+        <div className="section-divider" aria-hidden="true" />
         <FeaturesSection />
 
-        <div className="section-divider" />
+        <div className="section-divider" aria-hidden="true" />
         <UseCasesSection />
 
-        <div className="section-divider" />
+        <div className="section-divider" aria-hidden="true" />
         <ArchitectureSection />
 
-        <div className="section-divider" />
+        <div className="section-divider" aria-hidden="true" />
         <VisionSection />
 
-        <div className="section-divider" />
+        <div className="section-divider" aria-hidden="true" />
         <CreatorSection />
       </main>
 
       <Footer />
+
+      {/* SEO: Hidden content for crawlers (visible when JS is disabled) */}
+      <noscript>
+        <div style={{ padding: '2rem', color: '#ededed', background: '#050505' }}>
+          <h1>Virtual Mouse — AI-Powered Hand Gesture Control</h1>
+          <p>
+            Control your computer using hand gestures with real-time computer vision.
+            An open-source AI project by Mayank Sharma using MediaPipe, OpenCV, and Python.
+          </p>
+          <h2>Features</h2>
+          <ul>
+            <li>21-point hand landmark detection</li>
+            <li>Real-time cursor control via hand gestures</li>
+            <li>Click, scroll, and drag gestures</li>
+            <li>30+ FPS performance on CPU</li>
+            <li>No additional hardware required — just a webcam</li>
+            <li>Cross-platform: Windows, macOS, Linux</li>
+          </ul>
+          <p>
+            <a href="https://github.com/Mayank-iitj/virtualmouse">View on GitHub</a> |
+            <a href="https://mayyanks.app">Author Website</a>
+          </p>
+        </div>
+      </noscript>
     </>
   );
 }
